@@ -19,10 +19,10 @@
 │   └── index.html
 └── src
     ├── App.css # APP样式.
-    ├── App.js # 应用程序入口。   
-    ├── BookList.js # 按状态`Currently Reading`, `Want to Read` 或 `Read`分栏显示书籍.    
-    ├── BookSearch.js # 按照关键字搜索书籍.   
-    ├── CreateBook.js # 添加一本新书.
+    ├── [修改]App.js # 应用程序入口。   
+    ├── [新增]BookList.js # 按状态`Currently Reading`, `Want to Read` 或 `Read`分栏显示书籍.    
+    ├── [新增]BookSearch.js # 按照关键字搜索书籍.   
+    ├── [新增]CreateBook.js # 添加一本新书.
     ├── ImageInput.js # 处理上传的书的图片.
     ├── App.test.js # 用于测试。提供 Create React 应用程序。
     ├── BooksAPI.js # 提供的Udacity后端的JavaScript API。
@@ -36,7 +36,3 @@
     ├── index.css # 通用风格。
     └── index.js # 仅用于DOM渲染。
 ```
-
-## 后台服务器的未使用说明
-
-由于开发环境无法正常连接到提供API服务的网络地址，所以本项目暂时未使用BookAPI，书籍列表的获取、更新和添加使用本地方法实现，App.js中也屏蔽了ComponentDidMoun。

@@ -18,13 +18,13 @@ class BookList extends Component {
                     <h2 className="bookshelf-title">{curBookState.name}</h2>
                     <div className="bookshelf-books">
                       <ol className="books-grid">
-                      {books.filter((curBook) => curBook.readstate === `${curBookState.id}`).map((curBook) => (
-                        <li key={curBook.title}>
+                      {books.filter((curBook) => curBook.shelf === `${curBookState.id}`).map((curBook) => (
+                        <li key={curBook.id}>
                           <div className="book">
                             <div className="book-top">
-                              <div className="book-cover" style={{ width: '128px', height: '190px', backgroundImage: `url(${curBook.url})` }}></div>
+                              <div className="book-cover" style={{ width: '128px', height: '190px', backgroundImage: `url(${curBook.smallThumbnail})` }}></div>
                               <div className="book-shelf-changer">
-                                <select value={curBook.readstate} onChange={(event)=>onMoveTo(`${curBook.title}`, event.target.value)}>
+                                <select value={curBook.shelf} onChange={(event)=>onMoveTo(curBook, event.target.value)}>
                                     <option value="none" disabled>Move to...</option>
                                   {bookState.map((state)=>(
                                     <option key={state.id} value={state.id}>{state.name}</option>
@@ -33,7 +33,7 @@ class BookList extends Component {
                               </div>
                             </div>
                             <div className="book-title">{curBook.title}</div>
-                            <div className="book-authors">{curBook.author}</div>
+                            <div className="book-authors">{curBook.authors ? curBook.authors.join(', ') : ''}</div>
                           </div>
                         </li>                        
                         ))}
